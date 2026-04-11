@@ -2685,6 +2685,8 @@ void Notepad_plus::checkSyncState()
 		_toolBar.setCheck(IDM_VIEW_SYNSCROLLV, false);
 		_toolBar.setCheck(IDM_VIEW_SYNSCROLLH, false);
 		checkMenuItem(IDM_VIEW_ZOOM_SYNC, false);
+		ScintillaViewParams& svp = const_cast<ScintillaViewParams&>(NppParameters::getInstance().getSVP());
+		svp._zoomSync = false;
 	}
 	enableCommand(IDM_VIEW_SYNSCROLLV, canDoSync, MENU | TOOLBAR);
 	enableCommand(IDM_VIEW_SYNSCROLLH, canDoSync, MENU | TOOLBAR);
